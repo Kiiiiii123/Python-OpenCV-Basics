@@ -1,6 +1,7 @@
 import cv2 
 import numpy as np
 
+# 颜色过滤：只显示单帧中特定范围内的颜色
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -23,7 +24,7 @@ while True:
   cv2.imshow('mask',mask)
   cv2.imshow('res',res)
   
-  k = cv2.waitKey(5) & 0xFF\
+  k = cv2.waitKey(5) & 0xFF  # 显示完一帧图像后延迟5ms显示下一帧，waitKey函数返回值是按键值
   if k ==27:
     break
     
