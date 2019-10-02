@@ -30,6 +30,9 @@ while True:
   # 中值模糊
   medianblur = cv2.medianBlur(res,15)
   
+  # 双边模糊
+  bilateralblur = cv2.bilateralFilter(res,15,75,75)
+  
   # 显示图像
   cv2.imshow('frame',frame)
   cv2.imshow('mask',mask)
@@ -37,6 +40,7 @@ while True:
   cv2.imshow('smoothed',smoothed)
   cv2.imshow('blur',blur)
   cv2.imshow('medianblur',medianblur)
+  cv2.imshow('bilateralblur',bilateralblur)
   
   k = cv2.waitKey(5) & 0xFF  # 显示完一帧图像后延迟5ms显示下一帧，waitKey函数返回值是按键值
   if k ==27:
