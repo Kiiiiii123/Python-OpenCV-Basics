@@ -25,7 +25,7 @@ while True:
   kernel = np.omes((4,4),np.uint8)
   erosion = cv2.erode(mask,kernel,,iterations = 1)
   
-  # 膨胀
+  # 膨胀 与腐蚀相反，与卷积核对应的原图像的像素值中只要有一个是1，中心元素的像素值就是1。所以这个操作会增加图像中白色区域（前景）。一般在去噪音时先腐蚀再膨胀，因为腐蚀再去掉白噪音的同时，也会使前景对象变小，所以我们再膨胀。这时噪音已经被去除，不会再回来了，但是前景还在并会增加，膨胀也可以用来连接两个分开的物体。
   dilation = cv2.dilate(mask,kernel,iterations = 1)
   
   # 显示图像
