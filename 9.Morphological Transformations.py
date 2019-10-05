@@ -21,11 +21,11 @@ while True:
   # 对原图和掩膜进行位运算
   res = cv2.bitwise_and(frame,frame,mask = mask) 
   
-  # fushi
+  # 腐蚀 把前景物体的边界腐蚀掉，但是前景仍然是白色的。卷积核沿着图像滑动，如果与卷积核对应的原图像的所有像素值都是1，那么中心元素就保持原来的像素 值，否则就变为零。根据卷积核的大小靠近前景的所有像素都会被腐蚀掉（变为0），所以前景物体会变小，整幅图像的白色区域会减少。这对于去除白噪音很有用也可以用来断开两个连在一块的物体。
   kernel = np.omes((4,4),np.uint8)
   erosion = cv2.erode(mask,kernel,,iterations = 1)
   
-  # pengzhang
+  # 膨胀
   dilation = cv2.dilate(mask,kernel,iterations = 1)
   
   # 显示图像
