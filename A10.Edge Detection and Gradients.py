@@ -7,14 +7,19 @@ cap = cv2.VideoCapture(0)
 while True:
   _,frame = cap.read()
 
+  # Laplacian算子与Sobel算子
   laplacian = cv2.Laplacian(frame.cv2.CV_64F)
   sobelx = cv2.Sobel(frame,cv2.CV_64F,1,0,ksize = 5)
   sobely = cv2.Sobel(frame,cv2.CV_64F,0,1,ksize = 5)
+  
+  # Canny边缘检测算法 噪音去除->计算图像梯度->非极大值抑制->滞后阀值
+  edges = cv2.Canny(frame,100,200)
   
   cv2.imshow('origin',frame)
   cv2.imshow('laplacian',laplacian)
   cv2.imshow('sobelx',sobelx)
   cv2.imshow('sobely',sobely)
+  cv2.imshow('edges',edges)
   
   k = cv2.waitKey(5) & 0xFF  # 显示完一帧图像后延迟5ms显示下一帧，waitKey函数返回值是按键值
   if k ==27:
