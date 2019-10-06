@@ -3,7 +3,6 @@
 import cv2 
 import numpy as np
 
-# 颜色过滤：只显示单帧中特定范围内的颜色
 cap = cv2.VideoCapture(0)
 
 while True:
