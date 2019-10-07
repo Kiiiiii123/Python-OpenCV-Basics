@@ -16,3 +16,9 @@
 # Positive images:
 # Sometimescalled 'info',pos.text,or something of this sort.Contains path to each image,by line,along with how many objects,and where they are located.
 # Example line:pos/1.jpg 1 0 0 50 50 
+
+# Notes:
+# You want negative images larger than positive images generally,if you are going to 'create samples' rather than collect and label positives.
+# Try to use small images.100*100 for negatives,50*50 for positives.
+# Will get even smaller when it comes to training!
+# Have ~ double positive images compared to negatives for training.
