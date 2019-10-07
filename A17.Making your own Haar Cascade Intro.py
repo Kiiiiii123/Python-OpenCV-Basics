@@ -8,3 +8,11 @@
 # -This is done with an OpenCV command.
 # 4、Train cascade.
 # -Done with OpenCV command.
+
+# Negative abd Positive images need destription files:
+# Negative images:
+# Generally a bg.txt file that contains the path to each image,by line.
+# Example line:neg/1.jpg
+# Positive images:
+# Sometimescalled 'info',pos.text,or something of this sort.Contains path to each image,by line,along with how many objects,and where they are located.
+# Example line:pos/1.jpg 1 0 0 50 50 
