@@ -52,10 +52,10 @@ def create_pos_n_neg():
           f.write(line)
       
       elif file_type == 'pos':
-        line = file_type+'/'+img+'1 0 0 50 50\n'
+        line = file_type+'/'+img+'1 0 0 50 50\n'  # 这里可以修改为多个目标对象及不同框定位置
         with open('bg.txt','a') as f:
           f.write(line)
           
-create_pos_n_neg()          
-# find_uglies()
 # store_raw_images()
+# find_uglies()
+create_pos_n_neg()   
