@@ -23,7 +23,7 @@ def store_raw_images():
     except Exception as e:
       print(str(e))
       
-# 存在链接中的图片不存在的情况  ，这里需要摆脱这些图片，新建一个uglies文件夹，复制其中一张图片到该文件夹中    
+# 存在链接中的图片不存在的情况，移除图片完成清洗，新建一个uglies文件夹，复制其中一张图片到该文件夹中    
 def find_uglies():
   for file_type in ['neg']:  # 可以是'pos'
     # 在neg文件夹下对图片进行遍历
