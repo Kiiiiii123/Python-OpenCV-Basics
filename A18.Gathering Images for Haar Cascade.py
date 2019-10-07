@@ -1,10 +1,11 @@
+# 可以简单理解为爬虫并初步处理图片的过程
 import urllib.request
 import cv2
 import numpy as np
 import os
 
 def store_raw_images():
-  neg_images_link = 'website'
+  neg_images_link = 'website like : http://image-net.org/api/text/imagenet.synset.geturls?wnid=n00523513'
   neg_image_urls = urllib.request.urlopen(neg_images_link).read().decode()
   
   if not os.path.exists('neg'):
